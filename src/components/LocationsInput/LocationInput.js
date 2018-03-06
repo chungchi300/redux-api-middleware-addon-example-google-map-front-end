@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import styled from 'styled-components';
+
 class LocationInput extends React.Component {
   render() {
     let deleteLocation;

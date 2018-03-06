@@ -8,8 +8,10 @@ import {
   reloadRoute,
 } from 'actions';
 import { isFailed } from 'helpers';
+import { Button } from 'rebass';
 import { Provider, connect } from 'react-redux';
 import Container from 'components/LocationsInput/Container';
+import ButtonContainer from 'components/LocationsInput/ButtonContainer';
 import LocationInput from 'components/LocationsInput/LocationInput';
 import ErrorContainer from 'components/LocationsInput/ErrorContainer';
 class LocationsInput extends React.Component {
@@ -39,18 +41,18 @@ class LocationsInput extends React.Component {
       );
     });
     let actionBtn = (
-      <button onClick={this.props.addLocation}>Add Location</button>
+      <Button onClick={this.props.addLocation}>Add Location</Button>
     );
     if (this.props.loading) {
-      actionBtn = <button disabled>REQUESTING</button>;
+      actionBtn = <Button disabled>REQUESTING</Button>;
     }
     let reloadBtn;
 
     if (this.props.failed) {
       reloadBtn = (
-        <button disabled={this.props.loading} onClick={this.props.reloadRoute}>
+        <Button disabled={this.props.loading} onClick={this.props.reloadRoute}>
           Server busy,Reload Route
-        </button>
+        </Button>
       );
     }
     let routeErr;
@@ -67,8 +69,8 @@ class LocationsInput extends React.Component {
     return (
       <Container>
         <div className={this.props.className}>{inputs}</div>
-        {actionBtn}
-        {reloadBtn}
+        <ButtonContainer>{actionBtn}</ButtonContainer>
+        <ButtonContainer>{reloadBtn}</ButtonContainer>
         {routeErr}
       </Container>
     );

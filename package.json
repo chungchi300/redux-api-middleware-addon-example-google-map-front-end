@@ -9,6 +9,7 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
+    "rebass": "^1.0.7",
     "redux": "^3.7.2",
     "redux-api-middleware": "^2.2.0",
     "redux-api-middleware-addon": "git+ssh://git@github.com:chungchi300/redux-api-middleware-addon.git",
