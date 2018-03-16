@@ -1,4 +1,5 @@
 import API from 'redux-api-middleware-addon';
+console.log('The API', API);
 export function addLocation() {
   return async (dispatch, getState) => {
     dispatch({ type: 'ADD_LOCATION' });
